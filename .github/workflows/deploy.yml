@@ -24,8 +24,11 @@ jobs:
         run: npm install
       - name: Build your site
         run: npm run build
-      # - name: Upload artifact
-      #   run: npm run astro build # หรือคำสั่งสำหรับ build ของ Astro
+      - name: Upload artifact for deployment
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: dist # เปลี่ยนเป็น 
 
   deploy:
     needs: build
