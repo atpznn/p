@@ -38,5 +38,4 @@ jobs:
       url: https://atpznn.github.io
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
