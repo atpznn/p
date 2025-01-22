@@ -38,4 +38,4 @@ jobs:
       url: https://atpznn.github.io
     steps:
       - name: Deploy to GitHub Pages
-        path: dist
+        run: npm run start
