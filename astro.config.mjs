@@ -3,7 +3,8 @@ import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-const isProduction = process.env.PROD;
+const isProduction = process.env.NODE_ENV != "development";
+
 export default defineConfig({
   site: "https://astro-moon-landing.netlify.app/",
   integrations: [tailwind(), icon()],
