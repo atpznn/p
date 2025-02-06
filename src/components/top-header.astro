@@ -9,18 +9,26 @@ const navItems: Array<NavItem> = [
   { title: "Contact", url: "/contact" },
   { title: "Career", url: "/career" },
 ];
+import logoImage from "~/assets/logo_10x.png";
+import { Image } from "astro:assets";
 
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-black"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">10x Plus</h1>
 
     
-
+<Image
+  class="h-full w-[50px] object-cover"
+  src={logoImage}
+  widths={[50]}
+  sizes={'50'}
+  alt="The ridged surface of the moon"
+/>
 <span class="font-extrabold">
   10x Plus
 </span>

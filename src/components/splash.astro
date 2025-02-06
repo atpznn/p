@@ -1,11 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
 import GitHubCorner from "./github-corner.astro";
-import logoImage from "~/assets/logo_10x.png";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
@@ -13,7 +11,6 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
 
 <section class="relative h-full bg-black">
   <Starfield />
-  <GitHubCorner />
   <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40">
     <HeroImage />
   </div>
@@ -21,13 +18,7 @@ const sizes = "(min-width: 640px) 42vw, 67vw";
     <h2
       class="flex flex-col items-center gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-    <Image
-  class="h-full w-[50px] object-cover"
-  src={logoImage}
-  widths={widths}
-  sizes={sizes}
-  alt="The ridged surface of the moon"
-/>
+    
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-6xl md:text-8xl"
       >
