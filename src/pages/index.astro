@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter";
+import { Image } from "astro:assets";
 import Compatibility from "~/components/compatibility.astro";
 import Features from "~/components/features.astro";
 import Footer from "~/components/footer.astro";
@@ -8,6 +9,8 @@ import Intro from "~/components/intro.astro";
 import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import "~/styles/index.css";
+import Bg from '~/assets/bg.jpeg' 
+import Logo from '~/assets/logo_10x.png' 
 
 const { generator, site } = Astro;
 const image = new URL("social.jpg", site);
@@ -63,6 +66,16 @@ const description =
   >
     <Header />
     <Splash />
+    <div class="relative">
+      <Image class="w-full blur-md" src={Bg} alt={''}></Image>
+      <span  style="font-size: 100px;"  class="top-[50%] left-[50%] bg-stone-800 p-10 rounded-full -translate-x-1/2 absolute -translate-y-1/2  text-white font-extrabold  ">
+        THE RIGHT MAN
+      </span>
+      <div  class="rounded-full absolute top-[-90px] left-[50%] -translate-x-1/2  bg-slate-200  p-8 shadow-xl">
+        <Image class=" w-[100px]" src={Logo} alt={''}></Image>
+      </div>
+    </div>
+
     <div class="space-y-24 px-8 py-32">
       <Intro />
       <Features />
