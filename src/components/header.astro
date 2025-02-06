@@ -2,13 +2,14 @@
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
+const base = import.meta.env.BASE_URL 
 
 const navItems: Array<NavItem> = [
-  { title: "Home", url: "/" },
-  { title: "About", url: "/about" },
-  { title: "Contact", url: "/contact" },
-  { title: "Career", url: "/career" },
-  { title: "Event", url: "/event" },
+  { title: "Home", url: `${base}/` },
+  { title: "About", url: `${base}/about` },
+  { title: "Contact", url: `${base}/contact` },
+  { title: "Career", url: `${base}/career` },
+  { title: "Event", url: `${base}/event` },
 
 ];
 

@@ -9,5 +9,5 @@ export default defineConfig({
   integrations: [tailwind(), icon()],
   prefetch: true,
   site: "https://atpznn.github.io",
-  base: isProduction ? "/p" : "/",
+  base: isProduction ? "/p" : "",
 });
