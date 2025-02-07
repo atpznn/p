@@ -3,6 +3,7 @@ import Footer from "~/components/footer.astro";
 import "~/styles/index.css";
 
 import Header from "~/components/top-header.astro";
+import { Image } from "astro:assets";
 interface Job {
   jobTitle: string;
   companyName: string;
@@ -12,6 +13,7 @@ interface Job {
   isUrgent: boolean;
   jobId: string;
 }
+import Bg from "~/assets/bg.jpeg";
 const jobUrl =
   "https://www.jobthai.com/th/jobs?keyword=10X+Plus+Co.%2C+Ltd.+%28%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97+%E0%B8%AA%E0%B8%B4%E0%B8%9A%E0%B9%80%E0%B8%AD%E0%B9%87%E0%B8%81%E0%B8%8B%E0%B9%8C+%E0%B8%9E%E0%B8%A5%E0%B8%B1%E0%B8%AA+%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94%29";
 const jobText = await fetch(jobUrl).then(async (x) => await x.text());
@@ -105,29 +107,76 @@ console.log(jobList);
   >
     <Header />
     <!-- <div class=" px-8 py-32"> -->
+    <div class="relative pt-[4rem]">
+      <Image src={Bg} alt={""} class="w-full" />
+      <h1
+        class="absolute left-[50%] top-[8rem] w-[250px] -translate-x-1/2 translate-y-1/2 rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:top-[33rem] sm:w-fit sm:text-3xl"
+      >
+        สวัสดิการ 10X Plus
+      </h1>
+    </div>
+    <div
+      class="mb-8 mt-12 flex h-full w-full flex-col gap-2 bg-default px-8 sm:px-96"
+    >
+      <ul>
+        <hr class="my-2">
+        <div class="text-center font-bold text-xl">
+          สวัสดิการในช่วงทดลองงาน (Probation)
+        </div>
+        <li class="my-2" style="font-size: 16px;">- Graduation Day (วันหยุดเพื่อเข้ารับปริญญา)</li>
+      </ul>
+      <ul>
+        <hr class="my-2"> 
+        <div class="text-center font-bold text-xl">
+          สวัสดิการในช่วงผ่านทดลองงาน
+        </div>
+        <li class="my-2" style="font-size: 16px;">- Group Insurance (ประกันอุบัติเหตุกลุ่ม FWD + OPD + IPD)</li>
+        <li class="my-2" style="font-size: 16px;">- ประกันสังคม</li>
+        <li class="my-2" style="font-size: 16px;">- Thai Massage (นวดเพื่อสุขภาพ สามารถเลือกร้านนวดเองได้)</li>
+        <li class="my-2" style="font-size: 16px;">- People Listen (โปรแกรมดูแลสุขภาพจิตให้พนักงาน
+          โดยนักจิตบำบัดผู้มีความเชี่ยวชาญ)
+        </li>
+        <li class="my-2" style="font-size: 16px;">-People Always on (โปรแกรมมอบ Reward และ Feedback ตลอดการทำงาน)
+        </li>
+        <li class="my-2" style="font-size: 16px;">- โบนัส (พิจารณาตามผลการปฏิบัติงานและผลประกอบการของบริษัท)</li>
+        <li class="my-2" style="font-size: 16px;">- การปรับเงินเดือนประจำปี ตามความสามารถและผลงานของพนักงาน</li>
+        <li class="my-2" style="font-size: 16px;">- สวัสดิการกู้บ้านกับธอส.</li>
+        <li class="my-2" style="font-size: 16px;">- Provident Fund (กองทุนสำรองเลี้ยงชีพ)</li>
+        <li class="my-2" style="font-size: 16px;">- Vacation Leave (วันลาพักร้อน เริ่มต้นที่ 6 วันต่อปี)</li>
+        <li class="my-2" style="font-size: 16px;">- ลาเพื่อปฏิบัติธรรม</li>
+        <li class="my-2" style="font-size: 16px;">- ตรวจสุขภาพประจำปี</li>
+        <li class="my-2" style="font-size: 16px;">- Birthday Gift (หยุดงานในวันเกิด หรือแลกรับเป็นเงินพิเศษ)</li>
+      </ul>
+    </div>
+    <hr class="mx-8 sm:mx-96 my-12">
 
-    <div class="h-full w-full bg-default px-8 sm:px-96 pt-[5rem] sm:pt-[7rem]">
-      <div class="sm:flex items-center justify-between">
-        <h1 class="font-bold text-md sm:text-3xl">
-          ตำแหน่งงาน 10xPlus ที่กำลังเปิดรับสมัคร
-        </h1>
-        <div class="text-end mt-4">
+    <div class="flex flex-col w-full justify-center items-center">
+      <h1
+        class="rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:text-3xl"
+      >
+        ตำเเหน่งงานที่ 10x Plus กำลังเปิดรับสมัคร
+      </h1>
+    </div>
+    <div class="h-full w-full bg-default px-8 sm:px-96">
+      <div class="">
+        <div class="mt-10 text-end">
           <a
-          href={jobUrl}
-          target="_blank"
-          class=" rounded-full bg-red-500 px-4 py-2  text-white">
-          หางานเพิ่มเติม
-        </a>
+            href={jobUrl}
+            target="_blank"
+            class="rounded-full bg-red-500 px-4 py-2 text-white"
+          >
+            หางานเพิ่มเติม
+          </a>
         </div>
       </div>
-      <div class="flex flex-col sm:gap-4 gap-8 pt-4">
+      <div class="flex flex-col gap-8 pt-4 sm:gap-4">
         {
           jobList.map((x: Job) => {
             return (
               <div class="flex flex-col gap-2 rounded-xl border">
-                <div class="sm:flex items-center gap-4 px-8 py-4 ">
+                <div class="items-center gap-4 px-8 py-4 sm:flex">
                   {x.isUrgent ? (
-                    <span class="hidden sm:block rounded-full  bg-red-600 px-4 py-1 text-white">
+                    <span class="hidden rounded-full bg-red-600 px-4 py-1 text-white sm:block">
                       เร่งด่วน!
                     </span>
                   ) : (
@@ -136,12 +185,11 @@ console.log(jobList);
                   <h2 class="font-bold" style="font-size: 24px;">
                     {x.jobTitle}
                   </h2>
-                 
                 </div>
                 <hr />
-                <div class="px-4 sm:px-8 py-4 sm:py-6">
+                <div class="px-4 py-4 sm:px-8 sm:py-6">
                   <div class="flex justify-end">
-                  <span class="block sm:hidden rounded-full  bg-red-600 px-4 py-1 text-white">
+                    <span class="block rounded-full bg-red-600 px-4 py-1 text-white sm:hidden">
                       เร่งด่วน!
                     </span>
                   </div>
@@ -149,7 +197,7 @@ console.log(jobList);
                   <div>สถานที่ : {x.location}</div>
                   <div>ประกาศเมื่อวันที่ : {x.postedDate}</div>
                   <div>เงินเดือน :{x.salary}</div>
-                  <div class="text-end mt-4 sm:mt-0">
+                  <div class="mt-4 text-end sm:mt-0">
                     <a
                       href={`https://www.jobthai.com/th/company/job/${x.jobId}`}
                       target="_blank"

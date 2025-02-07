@@ -9,45 +9,45 @@ import newyear2 from "~/assets/event/newyear2.jpg";
 import reward from "~/assets/event/reward.jpg";
 import reward2 from "~/assets/event/reward2.jpg";
 import "~/styles/index.css";
+
 interface EventDetail {
   name: string;
   detail: string;
   facebookLink: string;
   image: ImageMetadata[];
 }
+
 const dataEvents: EventDetail[] = [
   {
     detail: "เเจกหนักเเจกจริง",
-    name: "รางวัลโปรเจคดีเด่น 10x Project 2025 ",
+    name: "รางวัลโปรเจคดีเด่น 10x Project 2025",
     facebookLink:
       "https://www.facebook.com/10xpluscommunity/posts/pfbid02w7y8EMArbL7WVxjipsAXKL9Qk8s8byEWEqqSNLYAHyM9EJWi9SCsJzodUGLuE1el",
-    image: [reward,reward2],
+    image: [reward, reward2],
   },
   {
     detail: "เเจกหนักเเจกจริง",
     name: "กิจกรรมวันปีใหม่ 2025",
     facebookLink:
       "https://www.facebook.com/10xpluscommunity/posts/pfbid0K8SHC9BdvUM72eg4ftJKZ8j2F6toa8zbxN7Po6ebNALbbUBdY1VkBxSn9LzYxqiWl",
-    image: [newyear,newyear2],
+    image: [newyear, newyear2],
   },
   {
     detail: "เเจกหนักเเจกจริง",
-    name: "กิจกรรมวันคริสมาต์ 2025",
+    name: "กิจกรรมวันคริสมาสต์ 2025",
     facebookLink:
       "https://www.facebook.com/10xpluscommunity/posts/pfbid02sRcBb5VstJ5xxvZJeQ2effGPXyhnEAJ5RWF56nozCN2MjrRU1okSuqugsVU4rx94l",
-    image: [reward,],
+    image: [reward],
   },
   {
     detail: "เเจกหนักเเจกจริง",
-    name: "กิจกรรมวันคริสมาต์ 2025 ",
+    name: "กิจกรรมวันฮาโลวีน 2025",
     facebookLink:
       "https://www.facebook.com/10xpluscommunity/posts/pfbid02E92ej5sp9fM6B697dbYDr7LRzR78BYEVcPtbows99RTYbgafZ24RiChpC3GSFFKPl",
-    image: [halloween,halloween2],
+    image: [halloween, halloween2],
   },
-  
 ];
 ---
-
 <!doctype html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
@@ -85,6 +85,33 @@ const dataEvents: EventDetail[] = [
           }
         });
     </script>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const fbPosts = document.querySelectorAll(".fb-post");
+    
+        const loadFacebookSDK = () => {
+          if (window.FB) return;
+          const script = document.createElement("script");
+          script.async = true;
+          script.defer = true;
+          script.src =
+            "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2";
+          document.body.appendChild(script);
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadFacebookSDK();
+              observer.disconnect();
+            }
+          });
+        });
+    
+        fbPosts.forEach((post) => observer.observe(post));
+      });
+    </script>
+    
   </head>
   <body
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
@@ -134,3 +161,5 @@ const dataEvents: EventDetail[] = [
     <Footer/>
   </body>
 </html>
+
+
