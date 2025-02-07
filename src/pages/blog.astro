@@ -1,11 +1,8 @@
 ---
 import Footer from "~/components/footer.astro";
 import "~/styles/index.css";
-import Map from '~/components/map.astro'
-import Contact from '~/components/contact.astro'
 
 import Header from "~/components/top-header.astro";
-
 ---
 
 <!doctype html>
@@ -50,12 +47,9 @@ import Header from "~/components/top-header.astro";
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-        <div class="pt-[5rem] sm:pt-[7rem]">
-            <div class="px-96">
-                <Contact/>
-                <Map/>
-            </div>
-          </div>
+    <div class="pt-[5rem] sm:pt-[7rem]">
+      <div class="px-96">ยังไม่มีบทความ</div>
+    </div>
     <Footer />
   </body>
 </html>

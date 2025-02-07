@@ -1,5 +1,7 @@
 ---
 import Footer from "~/components/footer.astro";
+import "~/styles/index.css";
+
 import Header from "~/components/top-header.astro";
 interface Job {
   jobTitle: string;
@@ -101,26 +103,31 @@ console.log(jobList);
   <body
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
-    <Header class="" />
-    <div class="h-full w-full border-t px-96 pt-4">
-      <div class="flex items-center justify-between">
-        <h1 style="font-size: 36px;" class="font-bold">
+    <Header />
+    <!-- <div class=" px-8 py-32"> -->
+
+    <div class="h-full w-full bg-default px-8 sm:px-96 pt-[5rem] sm:pt-[7rem]">
+      <div class="sm:flex items-center justify-between">
+        <h1 class="font-bold text-md sm:text-3xl">
           ตำแหน่งงาน 10xPlus ที่กำลังเปิดรับสมัคร
         </h1>
-        <a
+        <div class="text-end mt-4">
+          <a
           href={jobUrl}
           target="_blank"
-          class="rounded-full bg-red-500 px-4 py-2 text-white">หางานเพิ่มเติม</a
-        >
+          class=" rounded-full bg-red-500 px-4 py-2  text-white">
+          หางานเพิ่มเติม
+        </a>
+        </div>
       </div>
-      <div class="flex flex-col gap-4 pt-4">
+      <div class="flex flex-col sm:gap-4 gap-8 pt-4">
         {
           jobList.map((x: Job) => {
             return (
               <div class="flex flex-col gap-2 rounded-xl border">
-                <div class="flex items-center gap-4 px-8 py-4">
+                <div class="sm:flex items-center gap-4 px-8 py-4 ">
                   {x.isUrgent ? (
-                    <span class="rounded-full bg-red-600 px-4 py-1 text-white">
+                    <span class="hidden sm:block rounded-full  bg-red-600 px-4 py-1 text-white">
                       เร่งด่วน!
                     </span>
                   ) : (
@@ -132,12 +139,17 @@ console.log(jobList);
                  
                 </div>
                 <hr />
-                <div class="px-8 py-6">
+                <div class="px-4 sm:px-8 py-4 sm:py-6">
+                  <div class="flex justify-end">
+                  <span class="block sm:hidden rounded-full  bg-red-600 px-4 py-1 text-white">
+                      เร่งด่วน!
+                    </span>
+                  </div>
                   <div>บริษัท : {x.companyName}</div>
                   <div>สถานที่ : {x.location}</div>
                   <div>ประกาศเมื่อวันที่ : {x.postedDate}</div>
                   <div>เงินเดือน :{x.salary}</div>
-                  <div class="text-end">
+                  <div class="text-end mt-4 sm:mt-0">
                     <a
                       href={`https://www.jobthai.com/th/company/job/${x.jobId}`}
                       target="_blank"
@@ -152,8 +164,7 @@ console.log(jobList);
           })
         }
       </div>
-
-      <!-- <iframe class="h-full w-full"   src="" frameborder="0"></iframe> -->
     </div>
+    <Footer />
   </body>
 </html>
