@@ -2,33 +2,30 @@
 import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
-
+const base = import.meta.env.BASE_URL =='/' ?'':import.meta.env.BASE_URL
+console.log(base)
 const navItems: Array<NavItem> = [
-  { title: "Home", url: "/" },
-  { title: "About", url: "/about" },
-  { title: "Contact", url: "/contact" },
-  { title: "Career", url: "/career" },
+  { title: "Home", url: `${base}/` },
+  { title: "About", url: `${base}/about` },
+  { title: "Contact", url: `${base}/contact` },
+  { title: "Career", url: `${base}/career` },
+  { title: "Event", url: `${base}/event` },
+  { title:'Blogs', url:`${base}/blog`}
+
 ];
-import logoImage from "~/assets/logo_10x.png";
-import { Image } from "astro:assets";
 
 ---
 
 <header
   id="page-header"
-  class="flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-black"
+  class="flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-black "
+
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
+  <a class="flex items-center gap-3 hover:!text-default"  href={base+'/'}>
     <h1 class="sr-only">10x Plus</h1>
 
     
-<Image
-  class="h-full w-[50px] object-cover"
-  src={logoImage}
-  widths={[50]}
-  sizes={'50'}
-  alt="The ridged surface of the moon"
-/>
+
 <span class="font-extrabold">
   10x Plus
 </span>

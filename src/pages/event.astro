@@ -2,7 +2,13 @@
 import { Image } from "astro:assets";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/top-header.astro";
-import halloween from '~/assets/halloween.jpg'
+import halloween from '~/assets/event/halloween.jpg'
+import halloween2 from '~/assets/event/halloween2.jpg'
+import newyear from '~/assets/event/newyear.jpg'
+import newyear2 from '~/assets/event/newyear2.jpg'
+import reward from '~/assets/event/reward.jpg'
+import reward2 from '~/assets/event/reward2.jpg'
+
 ---
 
 <!doctype html>
@@ -47,6 +53,42 @@ import halloween from '~/assets/halloween.jpg'
     class=" flex flex-col h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >  
       <Header class="" />
-    <Image src={halloween} alt={''}></Image>
+      <div class="border-t">
+      </div>
+      <div class="flex flex-col gap-6 mx-[500px]">
+        <section class="border-b py-4">
+          <div>
+            รางวัลโปรเจคดีเด่น
+          </div>
+          <div>
+            <Image src={reward} alt={''}></Image>
+            <Image src={reward2} alt={''}></Image>
+          </div>
+        </section>
+        <section class="border-b py-4">
+          <div>
+            กิจกรรมวันปีใหม่
+          </div>
+          <div>
+            <Image src={newyear} alt={''}></Image>
+            <Image src={newyear2} alt={''}></Image>
+          </div>
+        </section>
+        <section class="border-b py-4">
+          <div>
+            กิจกรรมวันฮาโลวีน
+          </div>
+          <div>
+            <Image src={halloween} alt={''}></Image>
+            <Image src={halloween2} alt={''}></Image>
+          </div>
+        </section>
+
+       
+        
+        
+      </div>
+
+
   </body>
     </html>

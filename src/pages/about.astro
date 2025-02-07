@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import Header from "~/components/top-header.astro";
+import Logo from '~/assets/logo_10x.png'
+
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <title>Astro Landing Page</title>
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+    <body
+    class=" flex flex-col h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >  
+      <Header class="" />
+      <div class="border-t">
+      </div>
+      <div class="flex">
+        <Image src={Logo} alt={''}/>
+        <div>บริษัท 10X Plus บริษัทที่เริ่มต้นจากการเป็น Start-Up ที่มีพนักงานเพียง 10 กว่าคน พวกเราเติบโตขึ้น 10 เท่าทุกปี (ซึ่งเป็นที่มาของชื่อบริษัท) จนกลายเป็นบริษัทที่มีพนักงานมากกว่า 100 คน ธุรกิจของพวกเราคือการจัดจำหน่ายสินค้าประเภท IT ผ่านช่องทาง Online ทุกช่องทาง ภายใต้วิสัยทัศน์ที่มุ่งสู่ความเป็นที่ 1 ในทุกสายงาน</div>
+      </div>
+      10X Culture & Core Value
+
+1. Number 1
+เรามารวมกันที่แห่งนี้ เพื่อเป็นอันดับ 1 ในทุกสายงานที่เราทำ
+
+2. Move Fast & Be Bold
+ทำงานรวดเร็ว กล้าเสี่ยงกับทุกงาน ล้มเหลวอย่างฉลาดบนพื้นฐานของข้อมูล ที่ 10X Plus เราอนุญาตให้คุณผิดพลาดและล้มเหลวได้ แต่ต้องลุกขึ้นมาแก้ไขปัญหาอย่างรวดเร็ว พร้อมทั้งสาดส่องความผิดพลาดที่เกิดขึ้นเพื่อให้ผู้อื่นเรียนรู้ต่อจากเราได้
+
+3. The Right Man
+The Right Man คือคนที่สามารถคิดงานเองได้ สร้างงานเองได้ แก้ไขงานด้วยตัวเองได้ โดยไม่ต้องรอให้มีใครมาสั่ง แม้งานนั้นจะไม่เคยมีใครทำมาก่อนก็ตาม เสมือนการวาดภาพบนผืนผ้าใบเปล่า เป็นคนเก่งนิสัยดี สามารถทำงานร่วมกับทีมได้ดี ปฏิบัติตามกฎระเบียบขององค์กรและปรับตัวเข้ากับวัฒนธรรมขององค์กรได้เป็นอย่างดี
+
+4. WOW สนุกไปกับทุกความท้าทาย (ใช้ความสุขทำกำไร)
+ส่งมอบความสุขให้ทุกคน ให้มากกว่าที่ทุกคนต้องการ ส่งต่อความสุขและสิ่งที่ดีให้ลูกค้า คู่ค้า เพื่อนร่วมงาน สร้างวัฒนธรรมของการแบ่งปัน ไม่ใช่เพียงการให้ของขวัญ แต่เป็นการให้คำปรึกษา คำแนะนำ การช่วยเหลือ รวมถึงการชื่นชมกันและกัน การให้กำลังใจกันในการทำงาน ซึ่งจะส่งผลให้สังคมโดยรวมในองค์กรอยู่ในบรรยากาศที่ดี ร่วมกันสร้างความสุขให้เกิดขึ้นในองค์กร จนกระฉอกใส่ลูกค้า
+
+5. Flexible
+พร้อมรับความเปลี่ยนแปลง เพื่อปรับตัวให้เข้ากับสถานการณ์ต่าง ๆ ตลอดเวลา โฟกัสที่ Outcome ไม่ยึดติดการทำงานรูปแบบเดิม ๆ
+สวัสดิการ
+สวัสดิการในช่วงทดลองงาน (Probation)
+1. Graduation Day (วันหยุดเพื่อเข้ารับปริญญา)
+
+สวัสดิการในช่วงผ่านทดลองงาน
+1. Group Insurance (ประกันอุบัติเหตุกลุ่ม FWD + OPD + IPD)
+2. ประกันสังคม
+3. Thai Massage (นวดเพื่อสุขภาพ สามารถเลือกร้านนวดเองได้)
+4. People Listen (โปรแกรมดูแลสุขภาพจิตให้พนักงาน โดยนักจิตบำบัดผู้มีความเชี่ยวชาญ)
+5. People Always on (โปรแกรมมอบ Reward และ Feedback ตลอดการทำงาน)
+6. โบนัส (พิจารณาตามผลการปฏิบัติงานและผลประกอบการของบริษัท)
+7. การปรับเงินเดือนประจำปี ตามความสามารถและผลงานของพนักงาน
+8. สวัสดิการกู้บ้านกับธอส.
+9. Provident Fund (กองทุนสำรองเลี้ยงชีพ)
+10. Vacation Leave (วันลาพักร้อน เริ่มต้นที่ 6 วันต่อปี)
+11. ลาเพื่อปฏิบัติธรรม
+12. ตรวจสุขภาพประจำปี
+13. Birthday Gift (หยุดงานในวันเกิด หรือแลกรับเป็นเงินพิเศษ)
+
+
+  </body>
+    </html>
