@@ -2,13 +2,50 @@
 import { Image } from "astro:assets";
 import Footer from "~/components/footer.astro";
 import Header from "~/components/top-header.astro";
-import halloween from '~/assets/event/halloween.jpg'
-import halloween2 from '~/assets/event/halloween2.jpg'
-import newyear from '~/assets/event/newyear.jpg'
-import newyear2 from '~/assets/event/newyear2.jpg'
-import reward from '~/assets/event/reward.jpg'
-import reward2 from '~/assets/event/reward2.jpg'
+import halloween from "~/assets/event/halloween.jpg";
+import halloween2 from "~/assets/event/halloween2.jpg";
+import newyear from "~/assets/event/newyear.jpg";
+import newyear2 from "~/assets/event/newyear2.jpg";
+import reward from "~/assets/event/reward.jpg";
+import reward2 from "~/assets/event/reward2.jpg";
 import "~/styles/index.css";
+interface EventDetail {
+  name: string;
+  detail: string;
+  facebookLink: string;
+  image: ImageMetadata[];
+}
+const dataEvents: EventDetail[] = [
+  {
+    detail: "เเจกหนักเเจกจริง",
+    name: "รางวัลโปรเจคดีเด่น 10x Project 2025 ",
+    facebookLink:
+      "https://www.facebook.com/10xpluscommunity/posts/pfbid02w7y8EMArbL7WVxjipsAXKL9Qk8s8byEWEqqSNLYAHyM9EJWi9SCsJzodUGLuE1el",
+    image: [reward,reward2],
+  },
+  {
+    detail: "เเจกหนักเเจกจริง",
+    name: "กิจกรรมวันปีใหม่ 2025",
+    facebookLink:
+      "https://www.facebook.com/10xpluscommunity/posts/pfbid0K8SHC9BdvUM72eg4ftJKZ8j2F6toa8zbxN7Po6ebNALbbUBdY1VkBxSn9LzYxqiWl",
+    image: [newyear,newyear2],
+  },
+  {
+    detail: "เเจกหนักเเจกจริง",
+    name: "กิจกรรมวันคริสมาต์ 2025",
+    facebookLink:
+      "https://www.facebook.com/10xpluscommunity/posts/pfbid02sRcBb5VstJ5xxvZJeQ2effGPXyhnEAJ5RWF56nozCN2MjrRU1okSuqugsVU4rx94l",
+    image: [reward,],
+  },
+  {
+    detail: "เเจกหนักเเจกจริง",
+    name: "กิจกรรมวันคริสมาต์ 2025 ",
+    facebookLink:
+      "https://www.facebook.com/10xpluscommunity/posts/pfbid02E92ej5sp9fM6B697dbYDr7LRzR78BYEVcPtbows99RTYbgafZ24RiChpC3GSFFKPl",
+    image: [halloween,halloween2],
+  },
+  
+];
 ---
 
 <!doctype html>
@@ -49,46 +86,51 @@ import "~/styles/index.css";
         });
     </script>
   </head>
-    <body
-    class=" flex flex-col h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >  
-      <Header class="" />
-      <div class="border-t">
+  <body
+    class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header class="" />
+    <div class="mx-4 flex flex-col pt-[5rem] sm:mx-[500px] sm:pt-[7rem]">
+      <div>
+        <h1 class="font-bold text-xl sm:text-2xl">
+          กิจกรรมดีๆใน <span class="text-primary">10x Plus</span>
+        </h1>
       </div>
-      <div class="flex flex-col gap-6 mx-[500px]">
-        <section class="border-b py-4">
-          <div>
-            รางวัลโปรเจคดีเด่น
-          </div>
-          <div>
-            <Image src={reward} alt={''}></Image>
-            <Image src={reward2} alt={''}></Image>
-          </div>
-        </section>
-        <section class="border-b py-4">
-          <div>
-            กิจกรรมวันปีใหม่
-          </div>
-          <div>
-            <Image src={newyear} alt={''}></Image>
-            <Image src={newyear2} alt={''}></Image>
-          </div>
-        </section>
-        <section class="border-b py-4">
-          <div>
-            กิจกรรมวันฮาโลวีน
-          </div>
-          <div>
-            <Image src={halloween} alt={''}></Image>
-            <Image src={halloween2} alt={''}></Image>
-          </div>
-        </section>
-
-       
-        
-        
-      </div>
-
-
+      <div class="flex flex-col gap-6">
+        {
+          dataEvents.map((x) => {
+            return (
+              <section class="rounded-md border bg-white p-4 text-black shadow-lg">
+                <h2 class="text-md font-bold">{x.name}</h2>
+                <div class="flex flex-col gap-4">
+                  {x.image.map((y) => {
+                    return (
+                      <Image
+                        class="h-[150] w-full object-cover"
+                        src={y}
+                        alt={""}
+                      />
+                    );
+                  })}
+                </div>
+                <div class="my-4">
+                  ดูเพิ่มตามได้ที่โพสต์ด้านล่าง !!
+                  <script
+                    async
+                    defer
+                    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"
+                  />
+                  <div
+                    class="fb-post"
+                    data-href={x.facebookLink}
+                    data-width="500"
+                  />
+                </div>
+              </section>
+            );
+          })
+        }
+    </div>
+    <Footer/>
   </body>
-    </html>
+</html>
