@@ -1,11 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import Header from "~/components/top-header.astro";
-import Logo from '~/assets/logo_10x.png'
+import Logo from "~/assets/logo_10x.png";
+import FrontOffice from "~/assets/front_office.jpg";
+import Address from "~/assets/address.jpg";
+
 import "~/styles/index.css";
 import Footer from "~/components/footer.astro";
-import Office1 from '~/assets/bg2.png'
-import Office2 from '~/assets/office.jpg'
+import Office1 from "~/assets/bg2.png";
+import Office2 from "~/assets/office.jpg";
 ---
 
 <!doctype html>
@@ -13,9 +16,9 @@ import Office2 from '~/assets/office.jpg'
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/logo_10x.png" type="image/png" />
 
-    <title>Astro Landing Page</title>
+    <title>บริษัท 10x Plus </title>
 
     <!-- social media -->
     <meta property="og:title" content="Astro" />
@@ -46,53 +49,162 @@ import Office2 from '~/assets/office.jpg'
         });
     </script>
   </head>
-    <body
-    class=" flex flex-col h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
-  >  
-      <Header class="" />
-      <div class="pt-[5rem] sm:pt-[7rem]">
-
-      <div class="flex">
-        <Image src={Logo} alt={''}/>
+  <body
+    class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header class="" />
+    <div class="pt-[5rem] sm:pt-[5rem]">
+      <div class="relative">
+        <Image
+          src={FrontOffice}
+          alt={""}
+          class="h-[600px] w-full object-cover blur"
+        />
+        <div
+          class="absolute left-[50%] top-[45%] -translate-x-[50%] -translate-y-[50%] font-extrabold text-white text-8xl"
+        >
+          LEARN <br />
+          GROWTH <br />
+          SUCCESS
+        </div>
+        <div
+          class="absolute left-[50%] top-[100%] -translate-x-[50%] -translate-y-[50%] rounded-full bg-white p-8 shadow-2xl"
+        >
+          <Image src={Logo} class="" alt={""} />
+        </div>
       </div>
-      <div class="flex flex-col">
-        <div class="flex">
 
-          <Image src={Office1} alt={''}/>
+      <div class="m-auto max-w-6xl">
+        <div class="mt-28 flex justify-center font-extrabold text-2xl">
+          10X Plus
+        </div>
+        <hr class="my-4" />
+
+        <div class="flex flex-col">
           <div>
-
-            บริษัท 10X Plus บริษัทที่เริ่มต้นจากการเป็น Start-Up ที่มีพนักงานเพียง 10 กว่าคน พวกเราเติบโตขึ้น 10 เท่าทุกปี (ซึ่งเป็นที่มาของชื่อบริษัท) จนกลายเป็นบริษัทที่มีพนักงานมากกว่า 100 คน ธุรกิจของพวกเราคือการจัดจำหน่ายสินค้าประเภท IT ผ่านช่องทาง Online ทุกช่องทาง ภายใต้วิสัยทัศน์ที่มุ่งสู่ความเป็นที่ 1 ในทุกสายงาน
+            <div class="my-4 font-extrabold text-xl">ประวัติของบริษัท</div>
+            <div class="grid grid-flow-col grid-cols-12 gap-4">
+              <div class="col-span-4 h-full w-full">
+                <Image src={Address} alt={""} class="object-cover" />
+              </div>
+              <div class="col-span-8">
+                บริษัท 10X Plus บริษัทที่เริ่มต้นจากการเป็น Start-Up
+                ที่มีพนักงานเพียง 10 กว่าคน พวกเราเติบโตขึ้น 10 เท่าทุกปี
+                (ซึ่งเป็นที่มาของชื่อบริษัท) จนกลายเป็นบริษัทที่มีพนักงานมากกว่า
+                100 คน ธุรกิจของพวกเราคือการจัดจำหน่ายสินค้าประเภท IT
+                ผ่านช่องทาง Online ทุกช่องทาง
+                ภายใต้วิสัยทัศน์ที่มุ่งสู่ความเป็นที่ 1 ในทุกสายงาน
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="flex">
+          <hr class="my-4" />
           <div>
+            <div class="my-4 font-extrabold text-xl">
+             ข้อมูลบริษัท 
+            </div>
+            <div class="grid grid-flow-col grid-cols-12 gap-4">
+              <div class="col-span-6">
+                เป็นบริษัท trading หรือขายส่งโทรศัพท์และอุปกรณ์การสื่อสารโทรคมนาคม 
+                <br>
+                ตั้งอยู่ที่ 2 ซอยประชาราษฎร์ 4/1 ตำบลตลาดขวัญ อำเภอเมืองนนทบุรี จ.นนทบุรี 11000 <br>
+                บริการที่มี รับติดตั้งกล้องติดรถยนต์เเละขายหล้องที่หน้าร้านรวมไปถึงออนไลน์ ขายอุปกรณ์อิเล็กทรอนิกในช่องทางออนไลน์ ทั้งเว็บไซต์ของบริษัทเเละ ในแพตฟอร์มอย่าง shopee เเละ lazada 
+                <br>
+                ปัจจุบันมีพนักงานอยู่ 51 - 200 คน
+              </div>
+              <Image
+                src={Office1}
+                alt={""}
+                class="col-span-6 h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <hr class="my-4" />
+          <div>
+            <div class="my-4 font-extrabold text-xl">
+              วัฒนธรรมองค์กร (10X Culture & Core Value )
+            </div>
+            <div class="grid grid-flow-col grid-cols-12 gap-4">
+              <Image
+              src={Office2}
+              alt={""}
+              class="col-span-6 h-full w-full object-cover"
+            />
+              <div class="col-span-8">
+                1. Number 1
+                <br />
+                &ensp; &ensp;&ensp; เรามารวมกันที่แห่งนี้ เพื่อเป็นอันดับ 1 ในทุกสายงานที่เราทำ
+                <br />
+                <hr />
 
-          10X Culture & Core Value
+                2. Move Fast & Be Bold
+                <br />
+                <hr />
 
-          1. Number 1
-          เรามารวมกันที่แห่งนี้ เพื่อเป็นอันดับ 1 ในทุกสายงานที่เราทำ
+                &ensp; &ensp;&ensp; ทำงานรวดเร็ว กล้าเสี่ยงกับทุกงาน
+                ล้มเหลวอย่างฉลาดบนพื้นฐานของข้อมูล ที่ 10X Plus
+                เราอนุญาตให้คุณผิดพลาดและล้มเหลวได้
+                แต่ต้องลุกขึ้นมาแก้ไขปัญหาอย่างรวดเร็ว
+                พร้อมทั้งสาดส่องความผิดพลาดที่เกิดขึ้นเพื่อให้ผู้อื่นเรียนรู้ต่อจากเราได้
+                <br />
+                3. The Right Man
+                <br />
+                <hr />
+
+                &ensp; &ensp;&ensp;The Right Man คือคนที่สามารถคิดงานเองได้
+                สร้างงานเองได้ แก้ไขงานด้วยตัวเองได้ โดยไม่ต้องรอให้มีใครมาสั่ง
+                แม้งานนั้นจะไม่เคยมีใครทำมาก่อนก็ตาม
+                เสมือนการวาดภาพบนผืนผ้าใบเปล่า เป็นคนเก่งนิสัยดี
+                สามารถทำงานร่วมกับทีมได้ดี
+                ปฏิบัติตามกฎระเบียบขององค์กรและปรับตัวเข้ากับวัฒนธรรมขององค์กรได้เป็นอย่างดี
+                <br />
+                4. WOW สนุกไปกับทุกความท้าทาย (ใช้ความสุขทำกำไร)
+                <br />
+
+                &ensp; &ensp;&ensp;ส่งมอบความสุขให้ทุกคน
+                ให้มากกว่าที่ทุกคนต้องการ ส่งต่อความสุขและสิ่งที่ดีให้ลูกค้า
+                คู่ค้า เพื่อนร่วมงาน สร้างวัฒนธรรมของการแบ่งปัน
+                ไม่ใช่เพียงการให้ของขวัญ แต่เป็นการให้คำปรึกษา คำแนะนำ
+                การช่วยเหลือ รวมถึงการชื่นชมกันและกัน การให้กำลังใจกันในการทำงาน
+                ซึ่งจะส่งผลให้สังคมโดยรวมในองค์กรอยู่ในบรรยากาศที่ดี
+                ร่วมกันสร้างความสุขให้เกิดขึ้นในองค์กร จนกระฉอกใส่ลูกค้า
+                <br />
+                <hr />
+
+                5. Flexible
+                <br />
+
+                &ensp; &ensp;&ensp;พร้อมรับความเปลี่ยนแปลง
+                เพื่อปรับตัวให้เข้ากับสถานการณ์ต่าง ๆ ตลอดเวลา โฟกัสที่ Outcome
+                ไม่ยึดติดการทำงานรูปแบบเดิม ๆ
+              </div>
+           
+            </div>
+          </div>
+          <hr class="my-4" />
+          <div>
+            <div class="my-4 font-extrabold text-xl">
+             วิสัยทัศน์องค์กร (Vision)
+            </div>
+            <div class="grid grid-flow-col grid-cols-12 gap-4">
+              <div class="col-span-6">
+                บริษัท 10X Plus มีวิสัยทัศน์ที่จะมุ่งสู่ความเป็นที่ 1 ในผู้นำด้านธุรกิจประเภทไอทีเพื่อทำให้ชีวิตผู้คนดีขึ้นอย่างยั่งยืน โดยยึดมั่นในพันธกิจ 3 ประการ ดังนี้
+<br>
+                1. แบรนด์สินค้าไอทีของคนไทย เป็น Top Of Mind ของผู้บริโภค <br>
+                2. มุ่งมั่นที่จะพัฒนาทรัพยากรมนุษย์ของเราอย่างต่อเนื่อง ผ่านโปรแกรมการฝึกอบรมและการพัฒนาที่มีคุณภาพ <br>
+                3. ส่งมอบสินค้าและบริการที่สร้างความประทับใจให้กับลูกค้า รักษาลูกค้าด้วยความเอาใจใส่ และรับผิดชอบต่อชุมชน สังคมและสิ่งแวดล้อม <br>
+              </div>
+              <Image
+                src={Office1}
+                alt={""}
+                class="col-span-6 h-full w-full object-cover"
+              />
+            </div>
+          </div>
           
-          2. Move Fast & Be Bold
-          ทำงานรวดเร็ว กล้าเสี่ยงกับทุกงาน ล้มเหลวอย่างฉลาดบนพื้นฐานของข้อมูล ที่ 10X Plus เราอนุญาตให้คุณผิดพลาดและล้มเหลวได้ แต่ต้องลุกขึ้นมาแก้ไขปัญหาอย่างรวดเร็ว พร้อมทั้งสาดส่องความผิดพลาดที่เกิดขึ้นเพื่อให้ผู้อื่นเรียนรู้ต่อจากเราได้
-          
-          3. The Right Man
-          The Right Man คือคนที่สามารถคิดงานเองได้ สร้างงานเองได้ แก้ไขงานด้วยตัวเองได้ โดยไม่ต้องรอให้มีใครมาสั่ง แม้งานนั้นจะไม่เคยมีใครทำมาก่อนก็ตาม เสมือนการวาดภาพบนผืนผ้าใบเปล่า เป็นคนเก่งนิสัยดี สามารถทำงานร่วมกับทีมได้ดี ปฏิบัติตามกฎระเบียบขององค์กรและปรับตัวเข้ากับวัฒนธรรมขององค์กรได้เป็นอย่างดี
-          
-          4. WOW สนุกไปกับทุกความท้าทาย (ใช้ความสุขทำกำไร)
-          ส่งมอบความสุขให้ทุกคน ให้มากกว่าที่ทุกคนต้องการ ส่งต่อความสุขและสิ่งที่ดีให้ลูกค้า คู่ค้า เพื่อนร่วมงาน สร้างวัฒนธรรมของการแบ่งปัน ไม่ใช่เพียงการให้ของขวัญ แต่เป็นการให้คำปรึกษา คำแนะนำ การช่วยเหลือ รวมถึงการชื่นชมกันและกัน การให้กำลังใจกันในการทำงาน ซึ่งจะส่งผลให้สังคมโดยรวมในองค์กรอยู่ในบรรยากาศที่ดี ร่วมกันสร้างความสุขให้เกิดขึ้นในองค์กร จนกระฉอกใส่ลูกค้า
-          
-          5. Flexible
-          พร้อมรับความเปลี่ยนแปลง เพื่อปรับตัวให้เข้ากับสถานการณ์ต่าง ๆ ตลอดเวลา โฟกัสที่ Outcome ไม่ยึดติดการทำงานรูปแบบเดิม ๆ
+          <hr class="my-4" />
         </div>
-
-          <Image src={Office2} alt={''}/>
-        </div>
-      
       </div>
-
-      
-
-</div>
-<Footer></Footer>
+    </div>
+    <Footer />
   </body>
-    </html>
+</html>
