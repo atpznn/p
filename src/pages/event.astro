@@ -117,41 +117,45 @@ const dataEvents: EventDetail[] = [
   >
     <Header class="" />
     <div class="flex h-full flex-col py-12">
-      <div class="mx-4 flex flex-col pt-[3rem] sm:mx-[500px] sm:pt-[2rem]">
+      <div class="mx-8 flex flex-col  pt-[3rem] sm:pt-[2rem] gap-4">
         <div>
           <h1 class="font-bold text-xl sm:text-2xl">
             กิจกรรมดีๆใน <span class="text-primary">10x Plus</span>
           </h1>
         </div>
-        <div class="flex flex-col gap-6">
+        <div class="flex flex-wrap justify-center gap-6 ">
           {
             dataEvents.map((x) => {
               return (
-                <section class="rounded-md border bg-white p-4 text-black shadow-lg">
-                  <h2 class="text-md font-bold">{x.name}</h2>
-                  <div class="flex flex-col gap-4">
+                <section class="rounded-md border bg-white p-4 text-black shadow-lg flex flex-col gap-4  ">
+                  <h2 class="text-xl font-bold">{x.name}</h2>
+                  <div class="flex flex-col gap-4 ">
                     {x.image.map((y) => {
                       return (
                         <Image
-                          class="h-[150] w-full object-cover"
+                          class="h-[150] w-[700px] object-cover"
                           src={y}
                           alt={""}
                         />
                       );
                     })}
                   </div>
-                  <div class="my-4">
+                  <div class="my-4 flex flex-col gap-4 ">
+                    <div>
                     ดูเพิ่มตามได้ที่โพสต์ด้านล่าง !!
+                    </div>
+                    <div class="flex justify-center">
+
                     <script
                       async
                       defer
                       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"
-                    />
+                      />
                     <div
                       class="fb-post"
                       data-href={x.facebookLink}
-                      data-width="500"
-                    />
+                      />
+                      </div>
                   </div>
                 </section>
               );
@@ -159,7 +163,7 @@ const dataEvents: EventDetail[] = [
           }
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
   </body>
 </html>
