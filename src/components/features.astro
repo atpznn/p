@@ -1,26 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/content-section.astro";
-import type { FeatureItem } from "~/types";
 
-const features: Array<FeatureItem> = [
+const features = [
   {
     title: "Dengo",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "mdi:handshake",
+      "แบรนด์ Dengo ",
+    icon: "DG",
+    color:'blue'
+
   },
   {
     title: "Aston",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
+      "แบรนด์ Aston",
+    icon: "AT",
+    color:'red'
+
   },
   {
     title: "Axon",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
+      "แบรนด์ Axon",
+    icon: "AX",
+    color:'orange'
   },
   
 ];
@@ -28,17 +32,16 @@ const features: Array<FeatureItem> = [
 
 <ContentSection title="Subsidiary brand" id="features">
   <Fragment slot="lead">
-    We have Many Subsidiary brand<span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+   10x Plus ของเรามีเเบรนด์ย่อยหลากหลายเเบรนด์ที่เราดูเเลอยู่ เช่น
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl min-w-[400px] grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
-      features.map(({ title, description, icon }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="size-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} class="size-full" />
+      features.map(({ title, description, icon,color }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6 ">
+          <div class="size-16 rounded-full border-2 border-current p-3 flex justify-center items-center">
+            <span class={`text-[${color}] font-extrabold`}>
+            {icon}
+            </span>
           </div>
           <p class="text-center font-extrabold text-xl">{title}</p>
           <p class="text-center text-offset text-sm">{description}</p>
