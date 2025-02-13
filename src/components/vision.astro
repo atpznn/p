@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+
+const visions = [
+  {
+    title: "Top Of Mind",
+    detail: "แบรนด์สินค้าไอทีของคนไทย เป็น Top Of Mind ของผู้บริโภค",
+  },
+  {
+    title: "Humen Develop",
+    detail:
+      "มุ่งมั่นที่จะพัฒนาทรัพยากรมนุษย์ของเราอย่างต่อเนื่อง ผ่านโปรแกรมการฝึกอบรมและการพัฒนาที่มีคุณภาพ",
+  },
+  {
+    title: "Customer Impression",
+    detail:
+      "ส่งมอบสินค้าและบริการที่สร้างความประทับใจให้กับลูกค้า รักษาลูกค้าด้วยความเอาใจใส่ และรับผิดชอบต่อชุมชน สังคมและสิ่งแวดล้อม",
+  },
+];
+---
+
+<ContentSection title="10x Culture" id="showcase">
+  <Fragment slot="lead"> วัฒนธรรมองค์กรของ 10x Plus </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="flex flex-wrap justify-center gap-4">
+      {
+        visions.map((culture) => {
+          return (
+            <div class="flex w-full flex-col gap-2 border border-default bg-offset p-6 sm:w-[400px]">
+              <div class="font-extrabold text-xl">{culture.title}</div>
+              <hr />
+              <div class="text-center text-offset text-sm">
+                {culture.detail}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</ContentSection>

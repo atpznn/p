@@ -1,9 +1,8 @@
 ---
-import Footer from "~/components/footer.astro";
 import "~/styles/index.css";
 import Map from '~/components/map.astro'
-import Contact from '~/components/contact.astro'
-
+import Contacts from '~/components/contact.astro'
+import Footer from "~/components/footer-custom.astro";
 import Header from "~/components/top-header.astro";
 
 ---
@@ -52,7 +51,7 @@ import Header from "~/components/top-header.astro";
     <Header />
         <div class="pt-[5rem] sm:pt-[7rem]">
             <div class="px-96">
-                <Contact/>
+                <Contacts/>
                 <Map/>
             </div>
           </div>

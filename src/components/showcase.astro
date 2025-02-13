@@ -10,22 +10,39 @@ const featuredSites = await getCollection(
 const orderedSites = featuredSites.sort(
   (a, b) => a.data.featured! - b.data.featured!,
 );
+const products = [
+  {
+  title:'Real Cam Proplus',
+  link:'https://www.dengothailand.com/17447965/real-cam-proplus',
+  img:'https://www.dengothailand.com/images/editor/RCPP_Content_01.jpg'},
+  {
+  title:'Axon F1 Pro',
+  link:'https://www.axonthailand.com/17996140/axon-f1-pro',
+  img:'https://www.axonthailand.com/images/editor/20220719_Axon_F1_Pro_Banner-012.jpg'},
+  {
+  title:'Shining Bright',
+  link:'https://www.aston1.com/product/cp-2025-shining',
+  img:'https://www.aston1.com/images/editor/001_02.jpg'},
+  ]
 ---
 
 <ContentSection title="Our Products" id="showcase">
-  <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
-  </Fragment>
+  <Fragment slot="lead"> ตัวอย่างสินค้าของ 10x Plus </Fragment>
   <div class="max-w-6xl space-y-2">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {orderedSites.map((site) => <ShowcaseCard site={site} />)}
+    <div class="flex flex-wrap justify-center gap-4">
+      {
+        products.map((product) => {
+          return (
+            <a href={product.link} class="w-full sm:w-fit">
+            <div class="flex w-full flex-col gap-2 border-default border bg-offset p-6 sm:w-[400px]">
+              <div class="font-extrabold text-xl">{product.title}</div>
+              <hr />
+              <img src={product.img} alt="" class="object-cover h-[350px] "  />
+            </div>
+            </a>
+          )
+        })
+      }
     </div>
-    <p class="text-right text-sm">
-      <a class="text-primary" href="https://astro.build/showcase/">
-        ...and more &rarr;
-      </a>
-    </p>
   </div>
 </ContentSection>

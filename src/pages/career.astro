@@ -1,5 +1,6 @@
 ---
-import Footer from "~/components/footer.astro";
+import Footer from "~/components/footer-custom.astro";
+
 import "~/styles/index.css";
 
 import Header from "~/components/top-header.astro";
@@ -104,9 +105,11 @@ console.log(jobList);
     </script>
   </head>
   <body
-    class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
+    <div class="flex h-full flex-col py-12">
+
     <!-- <div class=" px-8 py-32"> -->
     <div class="relative pt-[4rem]">
       <Image src={Bg} alt={""} class="w-full" />
@@ -214,6 +217,8 @@ console.log(jobList);
         }
       </div>
     </div>
+  </div>
+
     <Footer />
   </body>
 </html>

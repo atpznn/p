@@ -1,0 +1,53 @@
+---
+import { getCollection } from "astro:content";
+import ContentSection from "~/components/content-section.astro";
+import ShowcaseCard from "~/components/showcase-card.astro";
+
+const cultures = [
+  {
+    title: "Number 1",
+    detail: "เรามารวมกันที่แห่งนี้ เพื่อเป็นอันดับ 1 ในทุกสายงานที่เราทำ",
+  },
+  {
+    title: "Move Fast & Be Bold",
+    detail:
+      "ทำงานรวดเร็ว กล้าเสี่ยงกับทุกงาน ล้มเหลวอย่างฉลาดบนพื้นฐานของข้อมูล ที่ 10X Plus เราอนุญาตให้คุณผิดพลาดและล้มเหลวได้",
+  },
+  {
+    title: "The Right Man",
+    detail:
+      "คนที่สามารถคิดงานเองได้ สร้างงานเองได้ แก้ไขงานด้วยตัวเองได้ โดยไม่ต้องรอให้มีใครมาสั่ง",
+  },
+  {
+    title: "WOW",
+    detail:
+      "ส่งมอบความสุขให้ทุกคน ให้มากกว่าที่ทุกคนต้องการ ส่งต่อความสุขและสิ่งที่ดีให้ลูกค้า คู่ค้า เพื่อนร่วมงาน ",
+  },
+  {
+    title: "Flexible",
+    detail:
+      "พร้อมรับความเปลี่ยนแปลง เพื่อปรับตัวให้เข้ากับสถานการณ์ต่าง ๆ ตลอดเวลา",
+  },
+];
+---
+
+<ContentSection title="10x Culture" id="showcase">
+  <Fragment slot="lead"> วัฒนธรรมองค์กรของ 10x Plus </Fragment>
+  <div class="max-w-6xl space-y-2">
+    <div class="flex flex-wrap justify-center gap-4">
+      {
+        cultures.map((culture) => {
+          return (
+            <div class="flex w-full flex-col gap-2 border border-default bg-offset p-6 sm:w-[400px]">
+              <div class="font-extrabold text-xl">{culture.title}</div>
+              <hr />
+              <div class="text-center text-offset text-sm">
+                {culture.detail}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</ContentSection>

@@ -1,5 +1,6 @@
 ---
-import Footer from "~/components/footer.astro";
+import Footer from "~/components/footer-custom.astro";
+
 import "~/styles/index.css";
 
 import Header from "~/components/top-header.astro";
@@ -48,9 +49,10 @@ import Header from "~/components/top-header.astro";
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <div class="pt-[5rem] sm:pt-[7rem]">
-      <div class="px-96">ยังไม่มีบทความ</div>
-    </div>
+    <div class="pt-[5rem] sm:pt-[7rem] flex flex-col h-full">
+      <div class="px-96 h-full">ยังไม่มีบทความ</div>
     <Footer />
+
+    </div>
   </body>
 </html>

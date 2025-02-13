@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+import HeroImage from "~/components/hero-image.astro";
+import type { FooterLink } from "~/types";
+
+const links: Array<FooterLink> = [
+  {
+    url: "https://www.facebook.com/10xpluscommunity",
+    description: "Astro's official website",
+    icon: "mdi:facebook",
+  },
+  {
+    url: "https://github.com/mhyfritz/astro-landing-page",
+    description: "View source on GitHub",
+    icon: "fa-brands:github-alt",
+  },
+  {
+    url: "https://astro.build/chat",
+    description: "Astro on Discord",
+    icon: "fa-brands:discord",
+  },
+  {
+    url: "https://twitter.com/astrodotbuild",
+    description: "Astro on Twitter",
+    icon: "fa-brands:twitter",
+  },
+];
+---
+
+<footer
+  class="right-0 grid h-64 grid-flow-row bg-offset p-4 text-default sm:grid-flow-col sm:px-56 sm:py-16"
+>
+  <div>
+    <div class="font-extrabold text-2xl">10x Plus Co.ltd</div>
+    <div>
+      10X Plus Co., Ltd. (บริษัท สิบเอ็กซ์ พลัส จำกัด) <br />
+      เลขที่ 2 ถนน ซอย ประชาราษฎร์ 4/1 ตำบลตลาดขวัญ อำเภอเมืองนนทบุรี จังหวัดนนทบุรี
+      11000
+    </div>
+  </div>
+  <div class="border-t px-4 pt-4 sm:border-l sm:border-t-0">
+    <div>โทรศัพท์: 098-284-3183</div>
+  </div>
+</footer>

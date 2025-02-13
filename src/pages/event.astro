@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Footer from "~/components/footer.astro";
+import Footer from "~/components/footer-custom.astro";
 import Header from "~/components/top-header.astro";
 import halloween from "~/assets/event/halloween.jpg";
 import halloween2 from "~/assets/event/halloween2.jpg";
@@ -48,6 +48,7 @@ const dataEvents: EventDetail[] = [
   },
 ];
 ---
+
 <!doctype html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
@@ -55,7 +56,7 @@ const dataEvents: EventDetail[] = [
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/logo_10x.png" type="image/png" />
 
-    <title>บริษัท 10x Plus | กิจกรรม </title>
+    <title>บริษัท 10x Plus | กิจกรรม</title>
     <!-- social media -->
     <meta property="og:title" content="Astro" />
     <meta property="og:type" content="website" />
@@ -87,7 +88,7 @@ const dataEvents: EventDetail[] = [
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
         const fbPosts = document.querySelectorAll(".fb-post");
-    
+
         const loadFacebookSDK = () => {
           if (window.FB) return;
           const script = document.createElement("script");
@@ -97,7 +98,7 @@ const dataEvents: EventDetail[] = [
             "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2";
           document.body.appendChild(script);
         };
-    
+
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -106,59 +107,59 @@ const dataEvents: EventDetail[] = [
             }
           });
         });
-    
+
         fbPosts.forEach((post) => observer.observe(post));
       });
     </script>
-    
   </head>
   <body
-    class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header class="" />
-    <div class="mx-4 flex flex-col pt-[5rem] sm:mx-[500px] sm:pt-[7rem]">
-      <div>
-        <h1 class="font-bold text-xl sm:text-2xl">
-          กิจกรรมดีๆใน <span class="text-primary">10x Plus</span>
-        </h1>
+    <div class="flex h-full flex-col py-12">
+      <div class="mx-4 flex flex-col pt-[5rem] sm:mx-[500px] sm:pt-[7rem]">
+        <div>
+          <h1 class="font-bold text-xl sm:text-2xl">
+            กิจกรรมดีๆใน <span class="text-primary">10x Plus</span>
+          </h1>
+        </div>
+        <div class="flex flex-col gap-6">
+          {
+            dataEvents.map((x) => {
+              return (
+                <section class="rounded-md border bg-white p-4 text-black shadow-lg">
+                  <h2 class="text-md font-bold">{x.name}</h2>
+                  <div class="flex flex-col gap-4">
+                    {x.image.map((y) => {
+                      return (
+                        <Image
+                          class="h-[150] w-full object-cover"
+                          src={y}
+                          alt={""}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div class="my-4">
+                    ดูเพิ่มตามได้ที่โพสต์ด้านล่าง !!
+                    <script
+                      async
+                      defer
+                      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"
+                    />
+                    <div
+                      class="fb-post"
+                      data-href={x.facebookLink}
+                      data-width="500"
+                    />
+                  </div>
+                </section>
+              );
+            })
+          }
+        </div>
       </div>
-      <div class="flex flex-col gap-6">
-        {
-          dataEvents.map((x) => {
-            return (
-              <section class="rounded-md border bg-white p-4 text-black shadow-lg">
-                <h2 class="text-md font-bold">{x.name}</h2>
-                <div class="flex flex-col gap-4">
-                  {x.image.map((y) => {
-                    return (
-                      <Image
-                        class="h-[150] w-full object-cover"
-                        src={y}
-                        alt={""}
-                      />
-                    );
-                  })}
-                </div>
-                <div class="my-4">
-                  ดูเพิ่มตามได้ที่โพสต์ด้านล่าง !!
-                  <script
-                    async
-                    defer
-                    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"
-                  />
-                  <div
-                    class="fb-post"
-                    data-href={x.facebookLink}
-                    data-width="500"
-                  />
-                </div>
-              </section>
-            );
-          })
-        }
+      <Footer />
     </div>
-    <Footer/>
   </body>
 </html>
-
-
