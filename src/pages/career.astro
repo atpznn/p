@@ -114,7 +114,7 @@ console.log(jobList);
     <div class="relative pt-[1rem]">
       <Image src={Bg} alt={""} class="w-full" />
       <h1
-        class="absolute left-[50%] top-[8rem] w-[250px] -translate-x-1/2 translate-y-1/2 rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:top-[33rem] sm:w-fit sm:text-3xl"
+        class="absolute left-[50%] top-[7.5rem] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:top-[30rem] sm:w-fit sm:text-3xl"
       >
         สวัสดิการ 10X Plus
       </h1>
@@ -177,7 +177,7 @@ console.log(jobList);
         {
           jobList.map((x: Job) => {
             return (
-              <div class="flex flex-col gap-2 rounded-xl border">
+              <div class="flex flex-col gap-2 rounded-xl border border-default bg-offset">
                 <div class="items-center gap-4 px-8 py-4 sm:flex">
                   {x.isUrgent ? (
                     <span class="hidden rounded-full bg-red-600 px-4 py-1 text-white sm:block">
