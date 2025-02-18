@@ -114,13 +114,13 @@ console.log(jobList);
     <div class="relative pt-[1rem]">
       <Image src={Bg} alt={""} class="w-full" />
       <h1
-        class="absolute left-[50%] top-[100%] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:top-[100%] sm:w-fit sm:text-3xl"
+        class="absolute left-[50%] top-[100%] w-[250px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm xl:top-[100%] xl:w-fit xl:text-3xl"
       >
         สวัสดิการ 10X Plus
       </h1>
     </div>
     <div
-      class="mb-8 mt-12 flex h-full w-full flex-col gap-2 bg-default px-8 sm:px-96"
+      class="mb-8 mt-12 flex h-full w-full flex-col gap-2 bg-default px-8 xl:px-96"
     >
       <ul>
         <hr class="my-2">
@@ -152,16 +152,16 @@ console.log(jobList);
         <li class="my-2" style="font-size: 16px;">- Birthday Gift (หยุดงานในวันเกิด หรือแลกรับเป็นเงินพิเศษ)</li>
       </ul>
     </div>
-    <hr class="mx-8 sm:mx-96 my-12">
+    <hr class="mx-8 xl:mx-96 my-12">
 
     <div class="flex flex-col w-full justify-center items-center">
       <h1
-        class="rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm sm:text-3xl"
+        class="rounded-full bg-black px-8 py-2 text-center font-bold text-white shadow-2xl text-sm xl:text-3xl"
       >
         ตำเเหน่งงานที่ 10x Plus กำลังเปิดรับสมัคร
       </h1>
     </div>
-    <div class="h-full w-full bg-default px-8 sm:px-96">
+    <div class="h-full w-full bg-default px-8 xl:px-96">
       <div class="">
         <div class="mt-10 text-end">
           <a
@@ -173,14 +173,14 @@ console.log(jobList);
           </a>
         </div>
       </div>
-      <div class="flex flex-col gap-8 pt-4 sm:gap-4">
+      <div class="flex flex-col gap-8 pt-4 xl:gap-4">
         {
           jobList.map((x: Job) => {
             return (
               <div class="flex flex-col gap-2 rounded-xl border border-default bg-offset">
-                <div class="items-center gap-4 px-8 py-4 sm:flex">
+                <div class="items-center gap-4 px-8 py-4 xl:flex">
                   {x.isUrgent ? (
-                    <span class="hidden rounded-full bg-red-600 px-4 py-1 text-white sm:block">
+                    <span class="hidden rounded-full bg-red-600 px-4 py-1 text-white xl:block">
                       เร่งด่วน!
                     </span>
                   ) : (
@@ -191,9 +191,9 @@ console.log(jobList);
                   </h2>
                 </div>
                 <hr />
-                <div class="px-4 py-4 sm:px-8 sm:py-6">
+                <div class="px-4 py-4 xl:px-8 xl:py-6">
                   <div class="flex justify-end">
-                    <span class="block rounded-full bg-red-600 px-4 py-1 text-white sm:hidden">
+                    <span class="block rounded-full bg-red-600 px-4 py-1 text-white xl:hidden">
                       เร่งด่วน!
                     </span>
                   </div>
@@ -201,7 +201,7 @@ console.log(jobList);
                   <div>สถานที่ : {x.location}</div>
                   <div>ประกาศเมื่อวันที่ : {x.postedDate}</div>
                   <div>เงินเดือน :{x.salary}</div>
-                  <div class="mt-4 text-end sm:mt-0">
+                  <div class="mt-4 text-end xl:mt-0">
                     <a
                       href={`https://www.jobthai.com/th/company/job/${x.jobId}`}
                       target="_blank"

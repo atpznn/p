@@ -98,7 +98,7 @@ const visions = [
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header class="" />
-    <div class="pt-[5rem] sm:pt-[5rem]">
+    <div class="pt-[5rem] xl:pt-[5rem]">
       <div class="relative">
         <Image
           src={FrontOffice}
@@ -128,11 +128,13 @@ const visions = [
         <div class="flex flex-col">
           <div>
             <div class="my-4 font-extrabold text-xl">ประวัติของบริษัท</div>
-            <div class="grid grid-flow-row sm:grid-flow-col  sm:grid-cols-12 gap-4">
-              <div class="col-span-12 sm:col-span-4 h-full w-full">
-                <Image src={Address} alt={""} class="object-cover w-full" />
+            <div class="grid grid-flow-row xl:grid-flow-col  xl:grid-cols-12 gap-4">
+              <div class="col-span-12 xl:col-span-4 h-full w-full">
+                <Image src={Address} alt={""}
+                class="col-span-6 xl:col-span-6  h-full w-full object-cover"
+                />
               </div>
-              <div class="col-span-12 sm:col-span-8">
+              <div class="col-span-12 xl:col-span-8">
                 <div class="bg-offset border border-default p-4 h-full">
                   บริษัท 10X Plus บริษัทที่เริ่มต้นจากการเป็น Start-Up
                   ที่มีพนักงานเพียง 10 กว่าคน พวกเราเติบโตขึ้น 10 เท่าทุกปี
@@ -147,8 +149,8 @@ const visions = [
           <hr class="my-4" />
           <div>
             <div class="my-4 font-extrabold text-xl">ข้อมูลบริษัท</div>
-            <div class="grid grid-flow-row sm:grid-flow-col   sm:grid-cols-12 gap-4">
-              <div class="col-span-6 sm:col-span-6 h-full w-full">
+            <div class="grid grid-flow-row xl:grid-flow-col   xl:grid-cols-12 gap-4">
+              <div class="col-span-6 xl:col-span-6 h-full w-full">
                 <div class="bg-offset border border-default p-4">
                   เป็นบริษัท trading
                   หรือขายส่งโทรศัพท์และอุปกรณ์การสื่อสารโทรคมนาคม
@@ -165,7 +167,7 @@ const visions = [
               <Image
                 src={Office1}
                 alt={""}
-                class="col-span-6 sm:col-span-6  h-full w-full object-cover"
+                class="col-span-6 xl:col-span-6  h-full w-full object-cover"
               />
             </div>
           </div>
@@ -174,13 +176,13 @@ const visions = [
             <div class="my-4 font-extrabold text-xl">
               วัฒนธรรมองค์กร (10X Culture & Core Value )
             </div>
-            <div class="grid grid-flow-row sm:grid-flow-col   sm:grid-cols-12 gap-4">
+            <div class="grid grid-flow-row xl:grid-flow-col   xl:grid-cols-12 gap-4">
               <Image
                 src={Office2}
                 alt={""}
-                class="col-span-12 sm:col-span-6 h-full w-full object-cover"
+                class="col-span-12 xl:col-span-6 h-full w-full object-cover"
               />
-              <div class="col-span-12 sm:col-span-8 h-full w-full">
+              <div class="col-span-12 xl:col-span-8 h-full w-full">
                 <div class="flex flex-col gap-4">
                   {cultures.map(x=>{
                     return(
@@ -203,8 +205,8 @@ const visions = [
             <div class="my-4 font-extrabold text-xl">
               วิสัยทัศน์องค์กร (Vision)
             </div>
-            <div class="grid grid-flow-row sm:grid-flow-col   sm:grid-cols-12 gap-4">
-              <div class="col-span-12 sm:col-span-6 h-full w-full">
+            <div class="grid grid-flow-row xl:grid-flow-col   xl:grid-cols-12 gap-4">
+              <div class="col-span-12 xl:col-span-6 h-full w-full">
                 <div class="flex flex-col">
 <div>
 
@@ -228,7 +230,7 @@ const visions = [
               <Image
                 src={Office1}
                 alt={""}
-                class="col-span-12 sm:col-span-6 h-full w-full object-cover"
+                class="col-span-12 xl:col-span-6 h-full w-full object-cover"
               />
             </div>
           </div>
