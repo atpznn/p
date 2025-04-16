@@ -4,6 +4,8 @@ import Footer from "~/components/footer-custom.astro";
 import "~/styles/index.css";
 
 import Header from "~/components/top-header.astro";
+import { getCollection } from "astro:content";
+const posts = await getCollection("blog");
 ---
 
 <!doctype html>
@@ -13,8 +15,7 @@ import Header from "~/components/top-header.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href="/logo_10x.png" type="image/png" />
 
-    <title>บริษัท 10x Plus | บล็อค </title>
-
+    <title>บริษัท 10x Plus | บล็อค</title>
 
     <!-- social media -->
     <meta property="og:title" content="Astro" />
@@ -49,10 +50,10 @@ import Header from "~/components/top-header.astro";
     class="flex h-full flex-col overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <div class="pt-[5rem] xl:pt-[7rem] flex flex-col h-full">
-      <div class="px-4 xl:px-96 h-full">ยังไม่มีบทความ</div>
-    <Footer />
-
+    <div class="flex h-full flex-col pt-[5rem] xl:pt-[7rem]">
+      {posts.map((x) => x.id)}
+      <div class="h-full px-4 xl:px-96">ยังไม่มีบทความ</div>
+      <Footer />
     </div>
   </body>
 </html>
